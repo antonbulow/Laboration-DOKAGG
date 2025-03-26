@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lab1/widgets/task_list.dart';
 
 
 class MainView extends StatelessWidget {
@@ -19,13 +20,7 @@ class MainView extends StatelessWidget {
       //       Text('DAT216/TIG091'),
       //       Text('Lab1 Todos'),
       //     ],
-        body: ListView(
-          children: [
-            ListTile(title: Text('DAT216/TIG091')),
-            ListTile(title: Text('Lab1 Todos')),
-            ListTile(title: Text('En rad till')),
-        ],
-      ),
+        body: TaskList()
     );
   }
 }
