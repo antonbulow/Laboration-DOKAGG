@@ -9,7 +9,7 @@ class MainView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Att Göra'),
+        title: const Text('To-Do'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
 
@@ -20,7 +20,19 @@ class MainView extends StatelessWidget {
       //       Text('DAT216/TIG091'),
       //       Text('Lab1 Todos'),
       //     ],
-        body: TaskList()
+        body: TaskList(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                    builder: (context) => AddView(),
+              ),
+            );
+          },
+          tooltip: 'Add To-Do',
+          child: const Icon(Icons.add),
+      )
     );
   }
 }
