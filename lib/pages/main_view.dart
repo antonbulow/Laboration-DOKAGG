@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lab1/pages/add_veiw.dart';
 import 'package:lab1/widgets/task_list.dart';
+
 
 
 class MainView extends StatelessWidget {

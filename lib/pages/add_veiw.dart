@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:lab1/model/task_handler.dart';
 import 'package:provider/provider.dart';
 
+class AddView extends StatelessWidget {
+  const AddView({super.key});
+
 @override
 Widget build(BuildContext context) {
    var taskHandler = Provider.of<TaskHandler>(context, listen: false);
@@ -32,4 +35,5 @@ return Scaffold(
      child: const Icon(Icons.done),
  ), // FloatingActionButton
 ); // Scaffold
+}
 }
