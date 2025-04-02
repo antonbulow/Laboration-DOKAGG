@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lab1/model/task_handler.dart';
+import 'package:lab1/widgets/delete_button.dart';
 import 'package:lab1/widgets/status_icon.dart';
+import 'package:lab1/widgets/title_text.dart';
 import 'package:provider/provider.dart';
 
 
@@ -14,20 +16,23 @@ class TaskList extends StatelessWidget {
     var tasks = taskHandler.activeTasks;
 
     return ListView(children: [
-        for (final task in tasks) 
-          ListTile(
+      for (final task in tasks)
+          Card(
+          elevation: 4,
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          child: ListTile(
             leading: StatusIcon(task),
-            title: Text(task.title),
-            onTap: (){
+            title: TitleText(task),
+            onTap: () {
               taskHandler.toggleTask(task);
             },
-            trailing: IconButton(
-              icon: Icon(Icons.delete),
-              onPressed: () {
-              taskHandler.deleteTask(task);
-            },
+            trailing: DeleteButton(
+                onPressed: () {
+                  taskHandler.deleteTask(task);
+                },
+            ),
           ),
-        ),
+        )
     ]);
   }
 }
